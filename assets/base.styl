@@ -1,17 +1,22 @@
+
+body-font-family = 'chaparral-pro', 'Helvetica Neue', Helvetica, Arial, sans-serif
+link-color = rgb(89, 142, 201)
+
+
 * {
     box-sizing: border-box;
 }
 
 body {
     margin: 0;
-    font: 16px/1.6 'Open Sans', sans-serif;
-    color: #6d6c6c;
+    font: 1.4rem/1.4 body-font-family;
+    color: #333;
 }
 
 h1, h2, h3 {
     font-family: proxima-nova-sc-osf, sans-serif;
-    font-weight: 300;
-    text-transform: uppercase;
+    font-weight: 600;
+    text-transform: lowercase;
 
     &:first-child {
         margin-top: 0;
@@ -30,12 +35,12 @@ h3 {
 
 a.more {
     color: #d45228;
-    
+
     font-family: proxima-nova-sc-osf, sans-serif;
     font-weight: 600;
-    text-transform: uppercase;
+    text-transform: lowercase;
     text-decoration: none;
-    
+
     &:hover {
         color: #973819;
     }
@@ -49,7 +54,7 @@ section:after {
 
 .module {
     padding: 5em 0;
-    
+
     &.color-1 {
         background-color: #eff8fa;
     }
@@ -76,14 +81,14 @@ figure {
     img {
         display: block;
         width: 100%;
-    }  
+    }
 }
 
 .container {
     margin: 0 auto;
     width: 50rem;
     padding: 0 1rem;
-    
+
     &.narrow {
         width: 40rem;
     }
@@ -99,12 +104,12 @@ figure {
     .column {
         float: left;
         padding: 1rem;
-        
+
         &.centered-content {
             text-align: center;
         }
     }
-    
+
     &.two .column {
         width: 50%;
     }
@@ -127,37 +132,44 @@ header {
 
     .branding {
         display: inline-block;
-        
+
         img {
             height: header-height;
         }
     }
-    
+
     nav {
         height: header-height;
         display: inline-block;
         float: right;
-        
-        font-size: 1.2rem;
-        
+        font-size: 1.3rem;
+
         > div {
             line-height: header-height;
             display: inline-block;
-            padding: 0 1rem;
+            margin-left: .2rem;
         }
-    
-        color: #d45228;
 
         a {
             position: relative;
             line-height: 1;
             text-decoration: none;
-            
+
             font-family: proxima-nova-sc-osf, sans-serif;
-            font-weight: 600;
-            text-transform: uppercase;
+            font-weight: 300;
+            text-transform: lowercase;
+
+            padding .3rem .8rem
+
+            color #291f47;
+
+            &:hover {
+                color: white;
+                background-color: link-color;
+                text-decoration: none;
+            }
         }
-    } 
+    }
 }
 
 footer {
@@ -170,7 +182,7 @@ footer {
         display: inline-block;
         color: white;
         padding: .3em .5em;
-        text-transform: uppercase;
+        text-transform: lowercase;
         transition: all .2s;
         text-decoration: none;$
 
@@ -210,10 +222,10 @@ footer {
 .overlay.container {
     position: relative;
     z-index: 1;
-    
+
     color: white;
     text-align: center;
-    
+
     h1 {
         font-weight: normal;
         font-size: 3rem;
@@ -224,18 +236,18 @@ footer {
     .join.button {
         display: inline-block;
         font-size: 1.5rem;
-        
+
         transition: all .3s;
-        
-        text-transform: uppercase;
+
+        text-transform: lowercase;
         font-family: proxima-nova-sc-osf, sans-serif;
         font-weight: 700;
-        
+
         border: 2px solid white;
         color: white;
-        
+
         padding: .5rem 3rem;
-        
+
         &:hover {
             color: white;
             background-color: #d45228;
@@ -248,12 +260,12 @@ footer {
     display: block;
     padding: .2rem 2rem;
     color: #d45228;
-    
+
     font-family: proxima-nova-sc-osf, sans-serif;
     font-weight: 600;
-    text-transform: uppercase;
+    text-transform: lowercase;
     text-decoration: none;
-    
+
     &:hover {
         color: #973819;
     }
@@ -278,7 +290,7 @@ footer {
 }
 .company.column .copyright {
     font-size: .8125rem;
-    text-transform: uppercase;
+    text-transform: lowercase;
     color: #555;
     line-height: 1;
 }
@@ -293,7 +305,7 @@ footer {
 
 .team-member {
     margin: 5rem 0;
-    
+
     &:last-child {
         margin-bottom: 0;
     }
@@ -309,62 +321,4 @@ footer {
     .content {
         padding-left: 10rem;
     }
-    
-}
-
-
-.cl-effect-21 a {
-	padding: 10px;
-	color: currentColor;
-	font-weight: 700;
-	text-shadow: none;
-	-webkit-transition: color 0.3s;
-	-moz-transition: color 0.3s;
-	transition: color 0.3s;
-}
-
-.cl-effect-21 a::before,
-.cl-effect-21 a::after {
-	position: absolute;
-	left: 0;
-	width: 100%;
-	height: 2px;
-	background: currentColor;
-	content: '';
-	opacity: 0;
-	-webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
-	-moz-transition: opacity 0.3s, -moz-transform 0.3s;
-	transition: opacity 0.3s, transform 0.3s;
-	-webkit-transform: translateY(-10px);
-	-moz-transform: translateY(-10px);
-	transform: translateY(-10px);
-}
-
-.cl-effect-21 a::before {
-	top: 0;
-	-webkit-transform: translateY(-10px);
-	-moz-transform: translateY(-10px);
-	transform: translateY(-10px);
-}
-
-.cl-effect-21 a::after {
-	bottom: 0;
-	-webkit-transform: translateY(10px);
-	-moz-transform: translateY(10px);
-	transform: translateY(10px);
-}
-
-.cl-effect-21 a:hover,
-.cl-effect-21 a:focus {
-	color: currentColor;
-}
-
-.cl-effect-21 a:hover::before,
-.cl-effect-21 a:focus::before,
-.cl-effect-21 a:hover::after,
-.cl-effect-21 a:focus::after {
-	opacity: 1;
-	-webkit-transform: translateY(0px);
-	-moz-transform: translateY(0px);
-	transform: translateY(0px);
 }
