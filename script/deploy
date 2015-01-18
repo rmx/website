@@ -1,0 +1,24 @@
+#!/bin/sh
+set -e
+
+BUCKET="$1"
+if test -z "$BUCKET"; then
+    echo "Error: Need a bucket to deploy the website to."
+    exit 1
+fi
+
+rm -rf dist
+mkdir dist
+cp -r index.html assets dist/
+
+# Upload all assets.
+aws s3 sync dist s3://$BUCKET \
+    --acl public-read \
+    --cache-control "public, max-age=60"
+
+# Upload the version.
+printf `git rev-parse HEAD` > dist/version
+aws s3 cp dist/version s3://$BUCKET/version \
+    --acl public-read \
+    --content-type text/plain \
+    --cache-control "no-cache, no-store, must-revalidate"
