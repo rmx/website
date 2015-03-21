@@ -100,37 +100,45 @@ figure img {
   clear: both;
 }
 header {
-  margin: 1rem 0;
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  line-height: 0;
+  background-color: #352d33;
 }
 header .branding {
   display: inline-block;
 }
+header .branding a {
+  height: 2.5rem;
+  display: block;
+  padding: 6px;
+}
 header .branding img {
-  height: 3rem;
+  display: block;
+  height: 100%;
+  object-fit: contain;
 }
 header nav {
-  height: 3rem;
+  height: 2.5rem;
   display: inline-block;
   float: right;
   font-size: 1.3rem;
 }
-header nav > div {
-  line-height: 3rem;
+header nav a {
   display: inline-block;
   margin-left: 0.2rem;
-}
-header nav a {
-  position: relative;
-  line-height: 1;
+  line-height: 2.5rem;
+  height: 2.5rem;
   text-decoration: none;
   font-family: proxima-nova-sc-osf, sans-serif;
   font-weight: 300;
   text-transform: lowercase;
-  padding: 0.3rem 0.8rem;
-  color: #291f47;
+  padding: 0 0.8rem;
+  color: #fff;
 }
 header nav a:hover {
-  color: #fff;
   background-color: #598ec9;
   text-decoration: none;
 }
@@ -150,22 +158,6 @@ footer a {
 }
 footer a:hover {
   color: #000;
-}
-.banner {
-  height: 500px;
-  overflow: hidden;
-  text-align: center;
-  background-color: #7d92b7;
-}
-.banner .banner-image {
-  position: relative;
-  width: 0;
-  margin: 0 auto;
-}
-.banner img {
-  position: absolute;
-  width: 1245px;
-  left: -622.5px;
 }
 .button {
   display: inline-block;
@@ -256,4 +248,87 @@ footer a:hover {
 }
 .team-member .content {
   padding-left: 10rem;
+}
+.slides {
+  position: relative;
+  height: 36rem;
+  text-align: left;
+  overflow: hidden;
+}
+.slide {
+  height: 36rem;
+  display: none;
+}
+.slide .overlay {
+  position: relative;
+  top: 4rem;
+  left: 3rem;
+}
+.slide img {
+  position: absolute;
+  display: block;
+  object-fit: cover;
+  width: 100%;
+  height: 36rem;
+}
+.slide .message {
+  background-color: #352d33;
+  color: #fff;
+  display: inline;
+  font-size: 1.8rem;
+  line-height: 1.8;
+  padding: 1px 0 1px;
+  font-family: proxima-nova-sc-osf, sans-serif;
+  text-transform: lowercase;
+  border-bottom: 3px solid #457ab5;
+}
+.slide .details {
+  margin-top: 1rem;
+  font-weight: 200;
+  font-size: 1.3rem;
+  font-family: proxima-nova-sc-osf, sans-serif;
+  text-transform: lowercase;
+  background-color: #626262;
+  color: #fff;
+  width: 50%;
+  padding: 0.1rem 0.6rem 0.2rem;
+}
+.slide .details strong {
+  color: #e7df45;
+  font-weight: 100;
+}
+.slide .next {
+  display: inline-block;
+  margin-top: 3rem;
+  background-color: #598ec9;
+  color: #fff;
+  font-family: proxima-nova-sc-osf, sans-serif;
+  text-transform: lowercase;
+  display: inline-block;
+  text-decoration: none;
+  user-select: none;
+  padding: 0.1rem 0.8rem 0.2rem;
+}
+.slide .next:hover {
+  cursor: pointer;
+  background-color: #437fc2;
+}
+.slide .play {
+  display: inline-block;
+  font-size: 1.8rem;
+  position: absolute;
+  bottom: 2rem;
+  right: 4rem;
+  background-color: #e31819;
+  color: #fff;
+  font-family: proxima-nova-sc-osf, sans-serif;
+  text-transform: lowercase;
+  display: inline-block;
+  text-decoration: none;
+  user-select: none;
+  padding: 0.1rem 0.8rem 0.2rem;
+}
+.slide .play:hover {
+  cursor: pointer;
+  background-color: #cc1616;
 }

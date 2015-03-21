@@ -125,16 +125,31 @@ figure {
     }
 }
 
-header-height = 3rem;
+header-height = 2.5rem;
 
 header {
-    margin: 1rem 0;
+    position: absolute;
+    left: 0;
+    right: 0;
+
+    z-index: 2;
+    line-height: 0;
+
+    background-color: #352d33;
 
     .branding {
         display: inline-block;
 
-        img {
+        a {
             height: header-height;
+            display: block;
+            padding: 6px;
+        }
+
+        img {
+            display: block;
+            height: 100%;
+            object-fit: contain;
         }
     }
 
@@ -144,27 +159,23 @@ header {
         float: right;
         font-size: 1.3rem;
 
-        > div {
-            line-height: header-height;
-            display: inline-block;
-            margin-left: .2rem;
-        }
-
         a {
-            position: relative;
-            line-height: 1;
+            display: inline-block;
+
+            margin-left: .2rem;
+            line-height: header-height;
+            height: header-height;
             text-decoration: none;
 
             font-family: proxima-nova-sc-osf, sans-serif;
             font-weight: 300;
             text-transform: lowercase;
 
-            padding .3rem .8rem
+            padding 0 .8rem
 
-            color #291f47;
+            color: white;
 
             &:hover {
-                color: white;
                 background-color: link-color;
                 text-decoration: none;
             }
@@ -189,25 +200,6 @@ footer {
         &:hover {
             color: black;
         }
-    }
-}
-
-.banner {
-    height: 500px;
-    overflow: hidden;
-    text-align: center;
-    background-color: #7d92b7;
-
-    .banner-image {
-        position: relative;
-        width: 0;
-        margin: 0 auto;
-    }
-
-    img {
-        position: absolute;
-        width: 1245px;
-        left: -622.5px;
     }
 }
 
@@ -320,5 +312,119 @@ footer {
     }
     .content {
         padding-left: 10rem;
+    }
+}
+
+.slides {
+    position: relative;
+    height: 36rem;
+    text-align: left;
+
+    overflow: hidden;
+}
+
+.slide {
+    height: 36rem;
+
+    display: none;
+
+    .overlay {
+        position: relative;
+        top: 4rem;
+        left: 3rem;
+    }
+
+    img {
+        position: absolute;
+        display: block;
+        object-fit: cover;
+        width: 100%;
+        height: 36rem;
+    }
+
+    .message {
+        background-color: rgb(53, 45, 51);
+        color: white;
+        display: inline;
+
+        font-size: 1.8rem;
+        line-height: 1.8;
+        padding: 1px 0 1px;
+
+        font-family: proxima-nova-sc-osf, sans-serif;
+        text-transform: lowercase;
+
+        border-bottom: 3px solid rgb(69, 122, 181);
+    }
+
+    .details {
+        margin-top: 1rem;
+
+        font-weight: 200;
+        font-size: 1.3rem;
+
+        font-family: proxima-nova-sc-osf, sans-serif;
+        text-transform: lowercase;
+
+        background-color: #626262;
+        color: white;
+
+        width: 50%;
+
+        padding: .1rem .6rem .2rem;
+
+        strong {
+            color: #E7DF45;
+            font-weight: 100;
+        }
+    }
+
+    .next {
+        display: inline-block;
+        margin-top: 3rem;
+
+        background-color: #598ec9;
+        color: white;
+
+        font-family: proxima-nova-sc-osf, sans-serif;
+        text-transform: lowercase;
+
+        display: inline-block;
+        text-decoration: none;
+        user-select: none;
+
+        padding: .1rem .8rem .2rem;
+
+        &:hover {
+            cursor: pointer;
+            background-color: darken(#598ec9, 10%);
+        }
+    }
+
+    .play {
+        display: inline-block;
+
+        font-size: 1.8rem;
+
+        position: absolute;
+        bottom: 2rem;
+        right: 4rem;
+
+        background-color: #e31819;
+        color: white;
+
+        font-family: proxima-nova-sc-osf, sans-serif;
+        text-transform: lowercase;
+
+        display: inline-block;
+        text-decoration: none;
+        user-select: none;
+
+        padding: .1rem .8rem .2rem;
+
+        &:hover {
+            cursor: pointer;
+            background-color: darken(#e31819, 10%);
+        }
     }
 }

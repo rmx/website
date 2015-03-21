@@ -14,36 +14,108 @@
 
 <body>
     <header>
-        <div class="container">
-            <div class="branding">
-                <a href="/">
-                    <img src="/assets/logo.png">
-                </a>
-            </div>
-
-            <nav>
-                <div><a href="#features">Features</a></div>
-                <div><a href="#team">The Team</a></div>
-                <div><a href="http://blog.rmx.im/">Blog</a></div>
-            </nav>
+        <div class="branding">
+            <a href="/">
+                <img src="/assets/logo.png">
+            </a>
         </div>
+
+        <nav>
+            <a href="#team">The Team</a>
+            <a href="http://blog.rmx.im/">Blog</a>
+        </nav>
     </header>
 
-    <section class="banner">
-        <div class="banner-image">
-            <img src="/assets/title_img.png" alt="banner" />
-        </div>
-        <div class="overlay container">
-            <h1>Are you up for the challenge?</h1>
-            <a href="//rmx.im" class="join button">Play now</a>
-        </div>
-    </section>
+    <section>
+        <div class="slides">
+            <div class="what-it-is slide" style="display:block">
+                <img src="/assets/enc1-marquee.png">
 
-    <a id="features"></a>
-    <section class="module">
-        <div class="container tagline">
-            No experience grinding, no farming, just quick games
-            in the form of boss fights or small instances.
+                <a class="play" href="https://rmx.im/try">
+                    Play the tutorial encounter
+                </a>
+
+                <div class="overlay">
+                    <div class="message">
+                        &nbsp;Encounter is an online game platform&nbsp;<br>
+                        &nbsp;No experience grinding, no farming, just quick games&nbsp;<br>
+                        &nbsp;in the form of boss fights or small instances&nbsp;
+                    </div>
+                    <br>
+
+                    <div class="next" data-slide="objectives">
+                        Learn more about the games
+                    </div>
+                </div>
+
+            </div>
+            <div class="objectives slide">
+                <img src="/assets/showcase-enc-marquee.jpg">
+
+                <a class="play" href="https://rmx.im/try">
+                    Play the tutorial encounter
+                </a>
+
+                <div class="overlay">
+                    <div class="message">
+                        &nbsp;To win a game you have to complete objectives&nbsp;
+                    </div>
+
+                    <div class="details">
+                        Objectives are tasks which you have to complete to finish
+                        the game. Examples are <strong>Kill the boss</strong>,
+                        <strong>Kill all competing players</strong> or
+                        <strong>Collect X number of items</strong>.
+                    </div>
+
+                    <div class="next" data-slide="movement">
+                        Learn how to control your character
+                    </div>
+                </div>
+            </div>
+            <div class="movement slide">
+                <img src="/assets/enc2-marquee.png">
+
+                <a class="play" href="https://rmx.im/try">
+                    Play the tutorial encounter
+                </a>
+
+                <div class="overlay">
+                    <div class="message">
+                        &nbsp;Familiar movement and camera controls&nbsp;
+                    </div>
+
+                    <div class="details">
+                        Use <strong>WSAD</strong> to move your character around, rotate the camera
+                        with the right mouse button. Use 1 through 9 to cast spells.
+                        If you create an account all keybindings become configurable.
+                    </div>
+
+                    <div class="next" data-slide="combat">
+                        Learn how to use spells
+                    </div>
+                </div>
+            </div>
+            <div class="combat slide">
+                <img src="/assets/enc3-marquee.png">
+
+                <a class="play" href="https://rmx.im/try">
+                    Play the tutorial encounter
+                </a>
+
+                <div class="overlay">
+                    <div class="message">
+                        &nbsp;Use attack spells to destroy the enemies. Help your party&nbsp;<br>
+                        &nbsp;members by healing them or buffing them with helpful auras&nbsp;
+                    </div>
+
+                    <div class="details">
+                        Press <strong>tab</strong> or use the <strong>left mouse button</strong>
+                        to select your target. Then click the action button or use 1 through 9
+                        to cast the spell onto the target.
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -191,6 +263,18 @@
 
         ga('create', 'UA-58694115-1', 'auto');
         ga('send', 'pageview');
+    </script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script>
+        var $slides = $('.slides .slide');
+
+        $('.slide .next').click(function() {
+            var $el = $(this);
+            var target = $el.data('slide');
+            $slides.hide()
+            $('.slides .slide.' + target).show();
+        });
     </script>
 
 </body>
