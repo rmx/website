@@ -297,19 +297,43 @@ footer a:hover {
   color: #e7df45;
   font-weight: 100;
 }
-.slide .next {
-  display: inline-block;
+.slide .slide-controls {
   margin-top: 3rem;
+}
+.slide .slide-controls .prev {
+  display: inline-block;
+  height: 2rem;
+  vertical-align: top;
+  background-color: #598ec9;
+  color: #fff;
+  text-decoration: none;
+  user-select: none;
+  padding: 0.1rem 0.2rem 0.2rem;
+}
+.slide .slide-controls .prev:hover {
+  cursor: pointer;
+  background-color: #437fc2;
+}
+.slide .slide-controls .prev.disabled {
+  background-color: #999;
+}
+.slide .slide-controls .prev.disabled:hover {
+  cursor: inherit;
+  background-color: #999;
+}
+.slide .slide-controls .next {
+  display: inline-block;
+  height: 2rem;
+  vertical-align: top;
   background-color: #598ec9;
   color: #fff;
   font-family: proxima-nova-sc-osf, sans-serif;
   text-transform: lowercase;
-  display: inline-block;
   text-decoration: none;
   user-select: none;
   padding: 0.1rem 0.8rem 0.2rem;
 }
-.slide .next:hover {
+.slide .slide-controls .next:hover {
   cursor: pointer;
   background-color: #437fc2;
 }
@@ -317,7 +341,7 @@ footer a:hover {
   display: inline-block;
   font-size: 1.8rem;
   position: absolute;
-  bottom: 2rem;
+  bottom: 5rem;
   right: 4rem;
   background-color: #e31819;
   color: #fff;
@@ -331,4 +355,23 @@ footer a:hover {
 .slide .play:hover {
   cursor: pointer;
   background-color: #cc1616;
+}
+.slide .open-game {
+  display: inline-block;
+  font-size: 1.8rem;
+  position: absolute;
+  bottom: 2rem;
+  right: 4rem;
+  background-color: #ffeca1;
+  color: #1c1b24;
+  font-family: proxima-nova-sc-osf, sans-serif;
+  text-transform: lowercase;
+  display: inline-block;
+  text-decoration: none;
+  user-select: none;
+  padding: 0.1rem 0.8rem 0.2rem;
+}
+.slide .open-game:hover {
+  cursor: pointer;
+  background-color: #d0a600;
 }

@@ -379,25 +379,57 @@ footer {
         }
     }
 
-    .next {
-        display: inline-block;
+    .slide-controls {
         margin-top: 3rem;
 
-        background-color: #598ec9;
-        color: white;
+        .prev {
+            display: inline-block;
+            height: 2rem;
+            vertical-align: top;
 
-        font-family: proxima-nova-sc-osf, sans-serif;
-        text-transform: lowercase;
+            background-color: #598ec9;
+            color: white;
 
-        display: inline-block;
-        text-decoration: none;
-        user-select: none;
+            text-decoration: none;
+            user-select: none;
 
-        padding: .1rem .8rem .2rem;
+            padding: .1rem .2rem .2rem;
 
-        &:hover {
-            cursor: pointer;
-            background-color: darken(#598ec9, 10%);
+            &:hover {
+                cursor: pointer;
+                background-color: darken(#598ec9, 10%);
+            }
+
+            &.disabled {
+                background-color: #999;
+
+                &:hover {
+                    cursor: inherit;
+                    background-color: #999;
+                }
+            }
+        }
+
+        .next {
+            display: inline-block;
+            height: 2rem;
+            vertical-align: top;
+
+            background-color: #598ec9;
+            color: white;
+
+            font-family: proxima-nova-sc-osf, sans-serif;
+            text-transform: lowercase;
+
+            text-decoration: none;
+            user-select: none;
+
+            padding: .1rem .8rem .2rem;
+
+            &:hover {
+                cursor: pointer;
+                background-color: darken(#598ec9, 10%);
+            }
         }
     }
 
@@ -407,7 +439,7 @@ footer {
         font-size: 1.8rem;
 
         position: absolute;
-        bottom: 2rem;
+        bottom: 5rem;
         right: 4rem;
 
         background-color: #e31819;
@@ -425,6 +457,33 @@ footer {
         &:hover {
             cursor: pointer;
             background-color: darken(#e31819, 10%);
+        }
+    }
+
+    .open-game {
+        display: inline-block;
+
+        font-size: 1.8rem;
+
+        position: absolute;
+        bottom: 2rem;
+        right: 4rem;
+
+        background-color: #FFECA1;
+        color: #1C1B24;
+
+        font-family: proxima-nova-sc-osf, sans-serif;
+        text-transform: lowercase;
+
+        display: inline-block;
+        text-decoration: none;
+        user-select: none;
+
+        padding: .1rem .8rem .2rem;
+
+        &:hover {
+            cursor: pointer;
+            background-color: darken(#FFECA1, 50%);
         }
     }
 }

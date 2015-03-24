@@ -6,6 +6,7 @@
     <title>encounter - the game</title>
 
     <link rel="stylesheet" href="/assets/base.css">
+    <link rel="stylesheet" href="/assets/UI-Icon-master/icon.min.css">
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:100,300,400">
 
     <script type="text/javascript" src="//use.typekit.net/qsl0kfq.js"></script>
@@ -31,6 +32,9 @@
             <div class="what-it-is slide" style="display:block">
                 <img src="/assets/enc1-marquee.png">
 
+                <a class="open-game" href="https://rmx.im/">
+                    Already have an account?
+                </a>
                 <a class="play" href="https://rmx.im/try">
                     Play the tutorial encounter
                 </a>
@@ -43,35 +47,16 @@
                     </div>
                     <br>
 
-                    <div class="next" data-slide="objectives">
-                        Learn more about the games
+                    <div class="slide-controls">
+                        <div class="prev disabled">
+                            <i class="caret left icon"></i>
+                        </div>
+                        <div class="next" data-slide="movement">
+                            Learn how to control your character
+                        </div>
                     </div>
                 </div>
 
-            </div>
-            <div class="objectives slide">
-                <img src="/assets/showcase-enc-marquee.jpg">
-
-                <a class="play" href="https://rmx.im/try">
-                    Play the tutorial encounter
-                </a>
-
-                <div class="overlay">
-                    <div class="message">
-                        &nbsp;To win a game you have to complete objectives&nbsp;
-                    </div>
-
-                    <div class="details">
-                        Objectives are tasks which you have to complete to finish
-                        the game. Examples are <strong>Kill the boss</strong>,
-                        <strong>Kill all competing players</strong> or
-                        <strong>Collect X number of items</strong>.
-                    </div>
-
-                    <div class="next" data-slide="movement">
-                        Learn how to control your character
-                    </div>
-                </div>
             </div>
             <div class="movement slide">
                 <img src="/assets/enc2-marquee.png">
@@ -91,8 +76,13 @@
                         If you create an account all keybindings become configurable.
                     </div>
 
-                    <div class="next" data-slide="combat">
-                        Learn how to use spells
+                    <div class="slide-controls">
+                        <div class="prev" data-slide="what-it-is">
+                            <i class="caret left icon"></i>
+                        </div>
+                        <div class="next" data-slide="combat">
+                            Learn how to use spells
+                        </div>
                     </div>
                 </div>
             </div>
@@ -113,6 +103,44 @@
                         Press <strong>tab</strong> or use the <strong>left mouse button</strong>
                         to select your target. Then click the action button or use 1 through 9
                         to cast the spell onto the target.
+                    </div>
+
+                    <div class="slide-controls">
+                        <div class="prev" data-slide="movement">
+                            <i class="caret left icon"></i>
+                        </div>
+                        <div class="next" data-slide="objectives">
+                            Learn how to win a game
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="objectives slide">
+                <img src="/assets/showcase-enc-marquee.jpg">
+
+                <a class="play" href="https://rmx.im/try">
+                    Play the tutorial encounter
+                </a>
+
+                <div class="overlay">
+                    <div class="message">
+                        &nbsp;To win a game you have to complete objectives&nbsp;
+                    </div>
+
+                    <div class="details">
+                        Objectives are tasks which you have to complete to finish
+                        the game. Examples are <strong>Kill the boss</strong>,
+                        <strong>Kill all competing players</strong> or
+                        <strong>Collect X number of items</strong>.
+                    </div>
+
+                    <div class="slide-controls">
+                        <div class="prev" data-slide="combat">
+                            <i class="caret left icon"></i>
+                        </div>
+                        <a class="next" href="https://rmx.im/try">
+                            Play
+                        </a>
                     </div>
                 </div>
             </div>
@@ -274,6 +302,14 @@
             var target = $el.data('slide');
             $slides.hide()
             $('.slides .slide.' + target).show();
+        });
+        $('.slide .prev').click(function() {
+            var $el = $(this);
+            var target = $el.data('slide');
+            if (target) {
+                $slides.hide()
+                $('.slides .slide.' + target).show();
+            }
         });
     </script>
 
