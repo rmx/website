@@ -7,18 +7,19 @@ if test -z "$BUCKET"; then
     exit 1
 fi
 
+
 rm -rf dist
-mkdir dist
-cp -r index.html assets dist/
+mole --paths assets build dist
 
-# Upload all assets.
-aws s3 sync dist s3://$BUCKET \
-    --acl public-read \
-    --cache-control "public, max-age=60"
 
-# Upload the version.
-printf `git rev-parse HEAD` > dist/version
-aws s3 cp dist/version s3://$BUCKET/version \
-    --acl public-read \
-    --content-type text/plain \
-    --cache-control "no-cache, no-store, must-revalidate"
+# Upload all files to the bucket with no cache-control.
+gsutil -m -h 'Cache-Control: public, max-age=86400' rsync -cR \
+    dist/ gs://$BUCKET
+
+# Now change the cache-control header of all files except HTML.
+gsutil -m setmeta -h 'Cache-Control: no-cache, no-store, must-revalidate' \
+    gs://$BUCKET/**/*.html
+
+echo `git rev-parse HEAD` > dist/version
+gsutil -m -h 'Cache-Control: no-cache, no-store, must-revalidate' cp \
+    dist/version gs://$BUCKET/version
